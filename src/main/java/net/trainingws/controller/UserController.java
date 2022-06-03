@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.trainingws.model.User;
 import net.trainingws.repository.UserRepository;
-
-@CrossOrigin( origins = "http://localhost:4200")
+ 
 @RestController
 @RequestMapping("api/")
 public class UserController {
