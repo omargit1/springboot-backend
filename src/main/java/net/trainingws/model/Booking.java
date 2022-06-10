@@ -1,5 +1,7 @@
 package net.trainingws.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "booking")
+public class Booking {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +25,19 @@ public class User {
  
 	private String email;
 	
+	private double amount;
 	
-	public User() {
+	private Date dateIn;
+	private Date dateOut;
+	
+	private String typeBooking;
+	
+	
+	public Booking() {
 		super();
 	}
 	
-	public User(long id, String firstName, String lastName, String email) {
+	public Booking(long id, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -59,6 +68,38 @@ public class User {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public Date getDateIn() {
+		return dateIn;
+	}
+
+	public void setDateIn(Date dateIn) {
+		this.dateIn = dateIn;
+	}
+
+	public Date getDateOut() {
+		return dateOut;
+	}
+
+	public void setDateOut(Date dateOut) {
+		this.dateOut = dateOut;
+	}
+
+	public String getTypeBooking() {
+		return typeBooking;
+	}
+
+	public void setTypeBooking(String typeBooking) {
+		this.typeBooking = typeBooking;
 	}
 	
 }
